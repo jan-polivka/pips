@@ -9,3 +9,7 @@ func main() {
 func Greeter() string {
 	return "hello"
 }
+
+func Worlder() string {
+	return "world"
+}
