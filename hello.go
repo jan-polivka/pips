@@ -1,4 +1,4 @@
-package main
+package hello
 
 import "fmt"
 
@@ -7,5 +7,5 @@ func main() {
 }
 
 func greeter() string {
-	return "hell"
+	return "hello"
 }

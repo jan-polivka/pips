@@ -1,3 +1,3 @@
-module pips
+module pips/hello
 
 go 1.20
