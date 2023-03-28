@@ -6,6 +6,6 @@ func main() {
 	fmt.Println("Hello World!")
 }
 
-func greeter() string {
+func Greeter() string {
 	return "hello"
 }
