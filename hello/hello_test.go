@@ -13,7 +13,7 @@ func TestGreeter(t *testing.T) {
 
 func TestWorlder(t *testing.T) {
 	got := Worlder()
-	if got != "worl" {
+	if got != "world" {
 		t.Errorf("did not get world")
 	}
 }
