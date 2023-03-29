@@ -18,7 +18,7 @@ func TestWorlder(t *testing.T) {
 	}
 }
 
-func Test_helloWorld(t *testing.T) {
+func TestHelloWorld(t *testing.T) {
 	tests := []struct {
 		name string
 	}{
