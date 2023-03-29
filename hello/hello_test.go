@@ -22,7 +22,7 @@ func TestHelloWorld(t *testing.T) {
 	tests := []struct {
 		name string
 	}{
-		{"hello, hello world"},
+		{"hello, hello worl"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
