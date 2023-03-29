@@ -15,3 +15,7 @@ func Greeter() string {
 func Worlder() string {
 	return "world"
 }
+
+func helloWorld() {
+
+}
