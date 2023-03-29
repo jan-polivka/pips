@@ -16,6 +16,6 @@ func Worlder() string {
 	return "world"
 }
 
-func helloWorld() {
-
+func helloWorld() string {
+	return "hello world"
 }
