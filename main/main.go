@@ -10,7 +10,7 @@ func main() {
 
 	rand := rand.New(rand.NewSource(99))
 	matrix := []int{}
-	board := types.Board{matrix, rand}
+	board := types.Board{Matrix: matrix, Rand: rand}
 	game.SpawnPip(board)
 
 }
