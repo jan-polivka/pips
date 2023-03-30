@@ -9,7 +9,8 @@ import (
 func main() {
 
 	rand := rand.New(rand.NewSource(99))
-	board := types.Board{[]int{}, rand}
+	matrix := []int{}
+	board := types.Board{matrix, rand}
 	game.SpawnPip(board)
 
 }
