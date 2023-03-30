@@ -9,6 +9,6 @@ import (
 func Test_spawnPip(t *testing.T) {
 	board := []int{}
 	var result = spawnPip(board)
-	// var wrong [5]int
-	assert.Equal(t, board, result)
+	wrong := []int{1}
+	assert.Equal(t, wrong, result)
 }
