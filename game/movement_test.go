@@ -7,8 +7,7 @@ import (
 )
 
 func Test_spawnPip(t *testing.T) {
-	board := []int{}
+	board := []int{1}
 	var result = spawnPip(board)
-	wrong := []int{}
-	assert.Equal(t, wrong, result)
+	assert.Equal(t, board, result)
 }
