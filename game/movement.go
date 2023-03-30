@@ -1,5 +1,9 @@
 package game
 
-func SpawnPip(board []int) []int {
+import (
+	"pips/types"
+)
+
+func SpawnPip(board types.Board) types.Board {
 	return board
 }
