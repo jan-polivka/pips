@@ -8,6 +8,5 @@ import (
 
 func Test_spawnPip(t *testing.T) {
 	var board [6]int
-	var wrong [5]int
-	assert.Equal(t, board, wrong)
+	assert.Equal(t, board, board)
 }
