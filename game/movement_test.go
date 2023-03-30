@@ -6,8 +6,8 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_spawnPip(t *testing.T) {
+func Test_SpawnPip(t *testing.T) {
 	board := []int{1}
-	var result = spawnPip(board)
+	var result = SpawnPip(board)
 	assert.Equal(t, board, result)
 }
