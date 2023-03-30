@@ -11,7 +11,8 @@ type Board struct {
 
 func main() {
 
-	var board [6]int
-	r := rand.New(rand.NewSource(99))
+	rand := rand.New(rand.NewSource(99))
+	board := Board{[]int{}, rand}
+	game.spawnPip(board)
 
 }
