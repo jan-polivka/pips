@@ -1,5 +1,5 @@
 package game
 
-func spawnPip(board []int) []int {
+func SpawnPip(board []int) []int {
 	return board
 }
