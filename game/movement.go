@@ -10,6 +10,6 @@ func SpawnPip(board types.Board) types.Board {
 }
 
 func getSpawningPoint(rand *rand.Rand) int {
-	// return rand.Intn(5-0) + 0
-	return 3
+	return rand.Intn(5-0) + 0
+	// return 3
 }
