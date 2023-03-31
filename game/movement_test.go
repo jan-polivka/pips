@@ -25,6 +25,6 @@ func Test_GetSpawningPoint(t *testing.T) {
 	fmt.Println(randNumber)
 
 	result := getSpawningPoint(rand)
-	expected := 2
+	expected := 3
 	assert.Equal(t, expected, result)
 }
