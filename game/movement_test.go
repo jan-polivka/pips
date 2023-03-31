@@ -20,5 +20,6 @@ func Test_SpawnPip(t *testing.T) {
 func Test_GetSpawningPoint(t *testing.T) {
 	rand := rand.New(rand.NewSource(99))
 	result := getSpawningPoint(rand)
-	assert.Equal(t, 0, result)
+	expected := 0
+	assert.Equal(t, expected, result)
 }
