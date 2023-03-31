@@ -15,6 +15,8 @@ func Test_SpawnPip(t *testing.T) {
 	matrix := []int{}
 	board := types.Board{Matrix: matrix, Rand: rand}
 	var result = SpawnPip(board)
+	// expectedIdx := rand.Intn(5-0) + 0
+	// assert.Equal(t, 1, result.Matrix[expectedIdx])
 	assert.Equal(t, board, result)
 }
 
