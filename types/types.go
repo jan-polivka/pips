@@ -5,6 +5,6 @@ import (
 )
 
 type Board struct {
-	Matrix []int
+	Matrix [10]int
 	Rand   *rand.Rand
 }
