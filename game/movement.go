@@ -7,6 +7,8 @@ import (
 
 func SpawnPip(board types.Board) types.Board {
 	//
+	// spawningPoint := getSpawningPoint(board.Rand)
+	// board.Matrix[spawningPoint] = 1
 	return board
 }
 
