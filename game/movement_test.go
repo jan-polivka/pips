@@ -5,6 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
+	"fmt"
 	"math/rand"
 	"pips/types"
 )
@@ -24,5 +25,9 @@ func Test_GetSpawningPoint(t *testing.T) {
 
 	result := getSpawningPoint(rand)
 	expected := 2
+	fmt.Println(rand.Intn(5))
+	fmt.Println(rand.Intn(5))
+	fmt.Println(rand.Intn(5))
+	fmt.Println(rand.Intn(5))
 	assert.Equal(t, expected, result)
 }
