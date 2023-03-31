@@ -10,5 +10,5 @@ func SpawnPip(board types.Board) types.Board {
 }
 
 func getSpawningPoint(rand *rand.Rand) int {
-	return 0
+	return 1
 }
