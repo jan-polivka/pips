@@ -1,13 +1,15 @@
 package game
 
 import (
+	"fmt"
 	"math/rand"
 	"pips/types"
 )
 
 func SpawnPip(board types.Board) types.Board {
 	//
-	// spawningPoint := getSpawningPoint(board.Rand)
+	spawningPoint := getSpawningPoint(board.Rand)
+	fmt.Println(spawningPoint)
 	// board.Matrix[spawningPoint] = 1
 	return board
 }

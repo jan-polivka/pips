@@ -12,7 +12,7 @@ import (
 
 func Test_SpawnPip(t *testing.T) {
 	rand := rand.New(rand.NewSource(99))
-	matrix := []int{}
+	matrix := [10]int{}
 	board := types.Board{Matrix: matrix, Rand: rand}
 	var result = SpawnPip(board)
 	// expectedIdx := rand.Intn(5-0) + 0
