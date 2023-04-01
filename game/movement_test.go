@@ -79,8 +79,12 @@ func Test_processNewPosition(t *testing.T) {
 	rand := rand.New(rand.NewSource(99))
 	const cols = 10
 	matrix := [cols]int{}
-	board := types.Board{Matrix: matrix, Cols: cols, Rand: rand}
+	expectedBoard := types.Board{Matrix: matrix, Cols: cols, Rand: rand}
+	matrix[2] = 1
+	pip := types.Pip{Position: 2, Team: 1}
+	pipArray := []types.Pip{pip}
+	board := types.Board{Matrix: matrix, Cols: cols, Pips: pipArray, Rand: rand}
 	result := processNewPosition(1, board, 0)
 	fmt.Println(result.Matrix)
-
+	assert.Equal(t, expectedBoard.Matrix, result.Matrix)
 }
