@@ -8,8 +8,8 @@ import (
 )
 
 func Test_GenerateRandomInt(t *testing.T) {
-	const min = 0
-	const max = 100
+	const min = -1
+	const max = 1
 	const size = max - min + 1
 	randMap := make(map[int]int)
 	for i := 0; i < 100*size; i++ {
