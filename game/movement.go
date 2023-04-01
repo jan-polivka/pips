@@ -18,6 +18,7 @@ func MovePip(board types.Board, pipIdx int, getRandomInt random.GenerateRandomIn
 	newPosition := getNextPosition(board.Pips[pipIdx], getRandomInt)
 	fmt.Println(newPosition)
 	if isNewPositionValid(newPosition, board) {
+		fmt.Println("foo")
 		return processNewPosition(newPosition, board, pipIdx)
 	}
 	return board
