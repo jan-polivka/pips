@@ -36,3 +36,7 @@ func Test_GetNextPosition(t *testing.T) {
 	expected := 2
 	assert.Equal(t, expected, result)
 }
+
+func Test_CheckIfNewPositionIsValidBelowZero(t *testing.T) {
+
+}
