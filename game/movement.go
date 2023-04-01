@@ -16,3 +16,11 @@ func SpawnPip(board types.Board) types.Board {
 func getSpawningPoint(rand *rand.Rand) int {
 	return rand.Intn(5-0) + 0
 }
+
+func movePip(board types.Board) {
+	//get a new position
+	//check if new position is taken
+	//if not
+	//delete old pip in the board
+
+}
