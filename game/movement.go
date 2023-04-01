@@ -18,18 +18,10 @@ func getSpawningPoint(rand *rand.Rand) int {
 }
 
 func movePip(board types.Board, pipIdx int) types.Board {
-	//get a new position
 	newPosition := getNextPosition(board.Pips[pipIdx], board.Rand)
-	//check if new position is taken
 	if isNewPositionValid(newPosition, board) {
-		//if not
-		//delete old pip in the board
-		//assign the new position to the pip
-		//assign the new position in the matrix
 		processNewPosition(newPosition, board, pipIdx)
 	}
-	//if yes
-	//do nothing
 	return board
 }
 
