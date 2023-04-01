@@ -31,6 +31,7 @@ func getNextPosition(pip types.Pip, getRandomInt random.GenerateRandomIntFunctio
 
 func isNewPositionValid(newPosition int, board types.Board) bool {
 	if newPosition < 0 || newPosition >= board.Cols {
+		fmt.Println("beef")
 		return false
 	}
 	if board.Matrix[newPosition] != 0 {
