@@ -52,3 +52,10 @@ func isNewPositionWithinBounds(newPosition int, board types.Board) bool {
 	}
 	return true
 }
+
+func isNewPositionOccupied(newPosition int, board types.Board) bool {
+	if board.Matrix[newPosition] != 0 {
+		return false
+	}
+	return true
+}
