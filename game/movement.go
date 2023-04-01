@@ -2,11 +2,12 @@ package game
 
 import (
 	"math/rand"
+	"pips/random"
 	"pips/types"
 )
 
-func SpawnPip(board types.Board) types.Board {
-	spawningPoint := rand.Intn(5-0) + 0
+func SpawnPip(board types.Board, getRandomInt random.GenerateRandomIntFunction) types.Board {
+	spawningPoint := getRandomInt(0, 5)
 	board.Matrix[spawningPoint] = 1
 	pip := types.Pip{Position: spawningPoint, Team: 1}
 	board.Pips = append(board.Pips, pip)

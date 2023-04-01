@@ -14,10 +14,14 @@ func Test_SpawnPip(t *testing.T) {
 	matrix := [10]int{}
 	board := types.Board{Matrix: matrix, Cols: 10, Rand: rand}
 
-	var result = SpawnPip(board)
+	var result = SpawnPip(board, mockGenerateRandomInt)
 	expectedIdx := 4
 	assert.Equal(t, 1, result.Matrix[expectedIdx])
 	assert.Equal(t, 1, len(result.Pips))
+}
+
+func mockGenerateRandomInt(min int, max int) int {
+	return 4
 }
 
 func Test_GetSpawningPoint(t *testing.T) {
