@@ -46,5 +46,6 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 
 func processNewPosition(newPosition int, board types.Board, pipIdx int) types.Board {
 	board.Matrix[board.Pips[pipIdx].Position] = 0
+	board.Pips[pipIdx].Position = newPosition
 	return board
 }
