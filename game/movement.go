@@ -41,9 +41,6 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 	}
 	newPositionIsValid = isNewPositionWithinBounds(newPosition, board)
 	newPositionIsValid = isNewPositionOccupied(newPosition, board)
-	if board.Matrix[newPosition] != 0 {
-		return false
-	}
 	return newPositionIsValid
 }
 
