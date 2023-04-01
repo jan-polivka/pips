@@ -30,5 +30,6 @@ func movePip(board types.Board) {
 }
 
 func nextPosition(pip types.Pip, rand *rand.Rand) int {
-	return rand.Intn(2+1) - 1
+	newPosition := pip.Position + rand.Intn(2+1) - 1
+	return newPosition
 }
