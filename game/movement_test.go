@@ -50,6 +50,15 @@ func Test_CheckIfNewPositionIsValidAboveMaxColumns(t *testing.T) {
 	const cols = 10
 	matrix := [cols]int{}
 	board := types.Board{Matrix: matrix, Cols: cols, Rand: rand}
+	result := checkIfNewPositionIsValid(10, board)
+	assert.False(t, result)
+}
+
+func Test_CheckIfNewPositionIsValid(t *testing.T) {
+	rand := rand.New(rand.NewSource(99))
+	const cols = 10
+	matrix := [cols]int{}
+	board := types.Board{Matrix: matrix, Cols: cols, Rand: rand}
 	result := checkIfNewPositionIsValid(-1, board)
 	assert.False(t, result)
 }
