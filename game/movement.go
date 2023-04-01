@@ -37,6 +37,7 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 		fmt.Println("bar")
 		return false
 	}
+	fmt.Println("dead")
 	return true
 }
 
