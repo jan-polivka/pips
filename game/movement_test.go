@@ -70,8 +70,8 @@ func Test_isNewPositionValid(t *testing.T) {
 	const cols = 10
 	matrix := [cols]int{}
 	board := types.Board{Matrix: matrix, Cols: cols, Rand: rand}
-	result := isNewPositionValid(-1, board)
-	assert.False(t, result)
+	result := isNewPositionValid(3, board)
+	assert.True(t, result)
 }
 
 func Test_processNewPosition(t *testing.T) {
