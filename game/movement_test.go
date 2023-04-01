@@ -26,7 +26,7 @@ func Test_GetNextPosition(t *testing.T) {
 	assert.Equal(t, expected, result)
 }
 
-func Test_CheckIfNewPositionIsValidBelowZero(t *testing.T) {
+func Test_isNewPositionValidBelowZero(t *testing.T) {
 	rand := rand.New(rand.NewSource(99))
 	matrix := [10]int{}
 	board := types.Board{Matrix: matrix, Cols: 10, Rand: rand}
@@ -34,7 +34,7 @@ func Test_CheckIfNewPositionIsValidBelowZero(t *testing.T) {
 	assert.False(t, result)
 }
 
-func Test_CheckIfNewPositionIsValidAboveMaxColumns(t *testing.T) {
+func Test_isNewPositionValidAboveMaxColumns(t *testing.T) {
 	rand := rand.New(rand.NewSource(99))
 	const cols = 10
 	matrix := [cols]int{}
