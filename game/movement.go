@@ -13,7 +13,7 @@ func SpawnPip(board types.Board, getRandomInt random.GenerateRandomIntFunction) 
 	return board
 }
 
-func movePip(board types.Board, pipIdx int, getRandomInt random.GenerateRandomIntFunction) types.Board {
+func MovePip(board types.Board, pipIdx int, getRandomInt random.GenerateRandomIntFunction) types.Board {
 	newPosition := getNextPosition(board.Pips[pipIdx], getRandomInt)
 	if isNewPositionValid(newPosition, board) {
 		processNewPosition(newPosition, board, pipIdx)
