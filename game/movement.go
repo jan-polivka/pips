@@ -34,6 +34,6 @@ func getNextPosition(pip types.Pip, rand *rand.Rand) int {
 	return newPosition
 }
 
-func checkIfPositionIsValid(newPosition int, board types.Board) {
-
+func checkIfPositionIsValid(newPosition int, board types.Board) bool {
+	return true
 }
