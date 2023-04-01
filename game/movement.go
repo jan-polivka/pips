@@ -29,6 +29,6 @@ func movePip(board types.Board) {
 
 }
 
-func nextPosition(rand *rand.Rand) int {
+func nextPosition(pip types.Pip, rand *rand.Rand) int {
 	return 0
 }
