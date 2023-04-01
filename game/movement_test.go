@@ -81,6 +81,6 @@ func Test_processNewPosition(t *testing.T) {
 	matrix := [cols]int{}
 	board := types.Board{Matrix: matrix, Cols: cols, Rand: rand}
 	result := processNewPosition(1, board, 0)
-	fmt.Println(result)
+	fmt.Println(result.Matrix)
 
 }

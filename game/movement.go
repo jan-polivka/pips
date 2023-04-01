@@ -45,6 +45,6 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 }
 
 func processNewPosition(newPosition int, board types.Board, pipIdx int) types.Board {
-	//
+
 	return board
 }
