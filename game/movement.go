@@ -34,6 +34,7 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 		return false
 	}
 	if board.Matrix[newPosition] != 0 {
+		fmt.Println("bar")
 		return false
 	}
 	return true
