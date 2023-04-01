@@ -17,9 +17,9 @@ func Test_SpawnPip(t *testing.T) {
 
 	var result = SpawnPip(board)
 	fmt.Println(result.Matrix)
-	// expectedIdx := 2
-	// assert.Equal(t, 1, result.Matrix[expectedIdx])
-	// assert.Equal(t, 1, len(result.Pips))
+	expectedIdx := 4
+	assert.Equal(t, 1, result.Matrix[expectedIdx])
+	assert.Equal(t, 1, len(result.Pips))
 }
 
 func Test_GetSpawningPoint(t *testing.T) {
