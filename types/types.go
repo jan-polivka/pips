@@ -8,6 +8,7 @@ import (
 // Then add an array of pips
 type Board struct {
 	Matrix [10]int
+	Pips   [1]Pip
 	Rand   *rand.Rand
 }
 
