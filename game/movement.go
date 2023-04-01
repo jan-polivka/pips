@@ -28,3 +28,7 @@ func movePip(board types.Board) {
 	//do nothing
 
 }
+
+func nextPosition(rand *rand.Rand) int {
+	return 0
+}
