@@ -35,13 +35,15 @@ func getNextPosition(pip types.Pip, rand *rand.Rand) int {
 }
 
 func isNewPositionValid(newPosition int, board types.Board) bool {
+	newPositionIsValid := false
 	if newPosition < 0 || newPosition >= board.Cols {
 		return false
 	}
+	newPositionIsValid = isNewPositionWithinBounds(newPosition, board)
 	if board.Matrix[newPosition] != 0 {
 		return false
 	}
-	return true
+	return newPositionIsValid
 }
 
 func isNewPositionWithinBounds(newPosition int, board types.Board) bool {
