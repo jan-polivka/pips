@@ -8,7 +8,7 @@ type Board struct {
 	History BoardSnapshot
 	Matrix  [10]int
 	Cols    int
-	Pips    [1]Pip
+	Pips    []Pip
 	Rand    *rand.Rand
 }
 
