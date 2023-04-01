@@ -9,7 +9,6 @@ import (
 type Board struct {
 	History [][10]int
 	Matrix  [10]int
-	Rows    int
 	Cols    int
 	Pips    [1]Pip
 	Rand    *rand.Rand
