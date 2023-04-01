@@ -34,4 +34,5 @@ func Test_GetNextPosition(t *testing.T) {
 	rand := rand.New(rand.NewSource(99))
 	result := nextPosition(types.Pip{Position: 1, Team: 1}, rand)
 	fmt.Println(result)
+	assert.Equal(t, 2, result)
 }
