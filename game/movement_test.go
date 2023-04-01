@@ -20,10 +20,6 @@ func Test_SpawnPip(t *testing.T) {
 	assert.Equal(t, 1, len(result.Pips))
 }
 
-func mockGenerateRandomInt(min int, max int) int {
-	return 4
-}
-
 func Test_GetNextPosition(t *testing.T) {
 	result := getNextPosition(types.Pip{Position: 1, Team: 1}, func(int, int) int { return 1 })
 	expected := 2
