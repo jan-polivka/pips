@@ -35,6 +35,8 @@ func getNextPosition(pip types.Pip, rand *rand.Rand) int {
 }
 
 func checkIfNewPositionIsValid(newPosition int, board types.Board) bool {
-	//
-	return false
+	if newPosition < 0 || newPosition >= board.Cols {
+		return false
+	}
+	return true
 }
