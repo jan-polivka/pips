@@ -13,7 +13,7 @@ type Board struct {
 }
 
 type Pip struct {
-	Position [2]int
+	Position int
 	Team     int
 }
 
