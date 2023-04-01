@@ -1,7 +1,6 @@
 package game
 
 import (
-	"math/rand"
 	"pips/random"
 	"pips/types"
 )
@@ -12,10 +11,6 @@ func SpawnPip(board types.Board, getRandomInt random.GenerateRandomIntFunction) 
 	pip := types.Pip{Position: spawningPoint, Team: 1}
 	board.Pips = append(board.Pips, pip)
 	return board
-}
-
-func getSpawningPoint(rand *rand.Rand) int {
-	return rand.Intn(5-0) + 0
 }
 
 func movePip(board types.Board, pipIdx int, getRandomInt random.GenerateRandomIntFunction) types.Board {

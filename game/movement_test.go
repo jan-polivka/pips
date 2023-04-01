@@ -24,14 +24,6 @@ func mockGenerateRandomInt(min int, max int) int {
 	return 4
 }
 
-func Test_GetSpawningPoint(t *testing.T) {
-	rand := rand.New(rand.NewSource(99))
-
-	result := getSpawningPoint(rand)
-	expected := 2
-	assert.Equal(t, expected, result)
-}
-
 func Test_GetNextPosition(t *testing.T) {
 	result := getNextPosition(types.Pip{Position: 1, Team: 1}, func(int, int) int { return 1 })
 	expected := 2
