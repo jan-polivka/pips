@@ -5,7 +5,6 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"fmt"
 	"math/rand"
 	"pips/types"
 )
@@ -17,7 +16,6 @@ func Test_SpawnPip(t *testing.T) {
 
 	var result = SpawnPip(board)
 	expectedIdx := 2
-	fmt.Println(result.Matrix)
 	assert.Equal(t, 1, result.Matrix[expectedIdx])
 	assert.Equal(t, 1, len(result.Pips))
 }
