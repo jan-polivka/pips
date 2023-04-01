@@ -75,18 +75,19 @@ func Test_isNewPositionValid(t *testing.T) {
 }
 
 func Test_processNewPosition(t *testing.T) {
-
+	newPosition := 1
 	rand := rand.New(rand.NewSource(99))
 	const cols = 10
+	expectedMatrix := [cols]int{}
+	expectedMatrix[newPosition] = 1
+	expectedBoard := types.Board{Matrix: expectedMatrix, Cols: cols, Rand: rand}
+
 	matrix := [cols]int{}
-	expectedBoard := types.Board{Matrix: matrix, Cols: cols, Rand: rand}
 	matrix[2] = 1
 	pip := types.Pip{Position: 2, Team: 1}
 	pipArray := []types.Pip{pip}
 	board := types.Board{Matrix: matrix, Cols: cols, Pips: pipArray, Rand: rand}
-	newPosition := 1
 	result := processNewPosition(newPosition, board, 0)
-	fmt.Println(result.Matrix)
 	assert.Equal(t, expectedBoard.Matrix, result.Matrix)
 	assert.Equal(t, newPosition, board.Pips[0].Position)
 }
