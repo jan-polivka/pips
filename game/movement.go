@@ -17,7 +17,7 @@ func getSpawningPoint(rand *rand.Rand) int {
 	return rand.Intn(5-0) + 0
 }
 
-func movePip(board types.Board, pipIdx int) {
+func movePip(board types.Board, pipIdx int) types.Board {
 	//get a new position
 	newPosition := getNextPosition(board.Pips[pipIdx], board.Rand)
 	//check if new position is taken
@@ -30,7 +30,7 @@ func movePip(board types.Board, pipIdx int) {
 	}
 	//if yes
 	//do nothing
-
+	return board
 }
 
 func getNextPosition(pip types.Pip, rand *rand.Rand) int {
