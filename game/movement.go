@@ -43,3 +43,10 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 	}
 	return true
 }
+
+func isNewPositionWithinBounds(newPosition int, board types.Board) bool {
+	if newPosition < 0 || newPosition >= board.Cols {
+		return false
+	}
+	return true
+}
