@@ -32,7 +32,7 @@ func Test_GetSpawningPoint(t *testing.T) {
 
 func Test_GetNextPosition(t *testing.T) {
 	rand := rand.New(rand.NewSource(99))
-	for i := 0; i < 5; i++ {
+	for i := 0; i < 22; i++ {
 		fmt.Println(nextPosition(types.Pip{Position: 1, Team: 1}, rand))
 	}
 }
