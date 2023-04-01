@@ -18,3 +18,8 @@ type Pip struct {
 	Position [2]int
 	Team     int
 }
+
+type BoardSnapshot struct {
+	Board [10]int
+	Next  *BoardSnapshot
+}
