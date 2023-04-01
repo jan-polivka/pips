@@ -18,16 +18,16 @@ func getSpawningPoint(rand *rand.Rand) int {
 	return rand.Intn(5-0) + 0
 }
 
-func movePip(board types.Board, pipIdx int) types.Board {
-	newPosition := getNextPosition(board.Pips[pipIdx], board.Rand)
+func movePip(board types.Board, pipIdx int, getRandomInt random.GenerateRandomIntFunction) types.Board {
+	newPosition := getNextPosition(board.Pips[pipIdx], getRandomInt)
 	if isNewPositionValid(newPosition, board) {
 		processNewPosition(newPosition, board, pipIdx)
 	}
 	return board
 }
 
-func getNextPosition(pip types.Pip, rand *rand.Rand) int {
-	newPosition := pip.Position + rand.Intn(2+1) - 1
+func getNextPosition(pip types.Pip, getRandomInt random.GenerateRandomIntFunction) int {
+	newPosition := pip.Position + getRandomInt(-1, 2)
 	return newPosition
 }
 
