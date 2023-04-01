@@ -22,5 +22,9 @@ func movePip(board types.Board) {
 	//check if new position is taken
 	//if not
 	//delete old pip in the board
+	//assign the new position to the pip
+	//assign the new position in the matrix
+	//if yes
+	//do nothing
 
 }
