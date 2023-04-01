@@ -19,6 +19,7 @@ func Test_SpawnPip(t *testing.T) {
 	expectedIdx := 2
 	fmt.Println(result.Matrix)
 	assert.Equal(t, 1, result.Matrix[expectedIdx])
+	assert.Equal(t, 1, len(result.Pips))
 }
 
 func Test_GetSpawningPoint(t *testing.T) {
