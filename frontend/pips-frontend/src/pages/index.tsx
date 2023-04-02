@@ -1,3 +1,4 @@
+import { SimulationDisplay } from '@/components/SimulationDisplay';
 import { getMatch } from '@/logic/fetching';
 import { Button } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2';
@@ -11,7 +12,7 @@ export default function Home() {
       <div>
         <Grid container spacing={2}>
           <Grid xs={12} display={'flex'} justifyContent={'center'} alignContent={'center'}>
-            Hello
+            <SimulationDisplay matrixProp={[1, 2, 3]} />
           </Grid>
           <Grid xs={6} display={'flex'} justifyContent={'center'} alignContent={'center'}>
             <Button variant="contained" onClick={() => getMatch()}>Get match</Button>
