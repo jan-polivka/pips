@@ -19,17 +19,8 @@ func main() {
 	matrix := [cols]int{}
 	board := types.Board{Matrix: matrix, Cols: cols, Pips: []types.Pip{}, Rand: rand}
 	board = game.SpawnPip(board, random.GenerateRandomInt)
-	fmt.Println(board.Matrix)
-	board = game.MovePip(board, 0, random.GenerateRandomInt)
-	fmt.Println(board.Matrix)
-	board = game.MovePip(board, 0, random.GenerateRandomInt)
-	fmt.Println(board.Matrix)
-	board = game.MovePip(board, 0, random.GenerateRandomInt)
-	fmt.Println(board.Matrix)
-	board = game.MovePip(board, 0, random.GenerateRandomInt)
-	fmt.Println(board.Matrix)
-	board = game.MovePip(board, 0, random.GenerateRandomInt)
-	fmt.Println(board.Matrix)
+	board = game.ComputeMatch(board)
+	fmt.Println(game.MarshalMatch(board))
 
 	r := gin.Default()
 	r.Use(cors.New(cors.Config{
@@ -42,7 +33,7 @@ func main() {
 	})
 	r.GET("/match", func(c *gin.Context) {
 		fmt.Println("here in my garage")
-		c.JSON(200, gin.H{"message": "sent"})
+		c.JSON(200, gin.H{"message": game.MarshalMatch(board)})
 	})
 	r.Run()
 }

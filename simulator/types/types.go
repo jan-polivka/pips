@@ -5,7 +5,7 @@ import (
 )
 
 type Board struct {
-	History BoardSnapshot
+	History [][10]int
 	Matrix  [10]int
 	Cols    int
 	Pips    []Pip
@@ -15,9 +15,4 @@ type Board struct {
 type Pip struct {
 	Position int
 	Team     int
-}
-
-type BoardSnapshot struct {
-	Board [10]int
-	Next  *BoardSnapshot
 }
