@@ -20,7 +20,8 @@ func ComputeMatch(board types.Board) types.Board {
 
 func MarshalMatch(board types.Board) string {
 	res, err := json.Marshal(board.History)
-	fmt.Println(string(res))
-	fmt.Println(err)
+	if err != nil {
+		fmt.Println("Something went wrong")
+	}
 	return string(res)
 }

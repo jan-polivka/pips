@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math/rand"
 	"pips/game"
 	"pips/random"
@@ -14,14 +13,6 @@ import (
 
 func main() {
 
-	rand := rand.New(rand.NewSource(time.Now().UnixNano()))
-	const cols = 10
-	matrix := [cols]int{}
-	board := types.Board{Matrix: matrix, Cols: cols, Pips: []types.Pip{}, Rand: rand}
-	board = game.SpawnPip(board, random.GenerateRandomInt)
-	board = game.ComputeMatch(board)
-	fmt.Println(game.MarshalMatch(board))
-
 	r := gin.Default()
 	r.Use(cors.New(cors.Config{
 		AllowOrigins: []string{"http://localhost:3000"},
@@ -32,8 +23,18 @@ func main() {
 		c.JSON(200, gin.H{"message": "pong"})
 	})
 	r.GET("/match", func(c *gin.Context) {
-		fmt.Println("here in my garage")
-		c.JSON(200, gin.H{"message": game.MarshalMatch(board)})
+		c.JSON(200, gin.H{"message": game.MarshalMatch(doTheThing())})
 	})
 	r.Run()
+}
+
+func doTheThing() types.Board {
+
+	rand := rand.New(rand.NewSource(time.Now().UnixNano()))
+	const cols = 10
+	matrix := [cols]int{}
+	board := types.Board{Matrix: matrix, Cols: cols, Pips: []types.Pip{}, Rand: rand}
+	board = game.SpawnPip(board, random.GenerateRandomInt)
+	board = game.ComputeMatch(board)
+	return board
 }

@@ -1,33 +1,17 @@
 import { matrixReducer } from "@/logic/matrixReducer";
-import { useEffect, useReducer, useState } from "react";
+import { MatrixContext } from "@/pages";
+import { useContext, useEffect, useReducer, useState } from "react";
 
 export var SimulationDisplay = ((props: { matrixProp: Array<Number> }): JSX.Element => {
 
+    const matrix = useContext(MatrixContext)
 
-    const [time, setTime] = useState(Date.now());
-    const [idx, setIdx] = useState(0)
-    const [matrix, setMatrix] = useReducer(matrixReducer, props.matrixProp)
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setTime(Date.now())
-            if (idx < matrix.length) {
-                console.log(matrix[idx])
-            }
-            console.log(idx + 1)
-            setIdx(idx + 1)
-        }, 1000);
-        return () => {
-            console.log("clearing")
-            clearInterval(interval);
-        };
-    }, []);
+    //Now, just setup the timer again and on you go with the Matrix?
 
     return (
         <>
-            {time}
-            <br></br>
-            {idx}
+            {matrix}
         </>
     )
 
