@@ -1,19 +1,16 @@
 import { matrixReducer } from "@/logic/matrixReducer";
 import { MatrixContext } from "@/pages";
+import { observer } from "mobx-react-lite";
 import { useContext, useEffect, useReducer, useState } from "react";
 
-export var SimulationDisplay = ((props: { matrixProp: Array<Number> }): JSX.Element => {
+export var SimulationDisplay = observer((({ matrix }: any): JSX.Element => {
 
-    const matrix = useContext(MatrixContext)
-
-
-    //Now, just setup the timer again and on you go with the Matrix?
 
     return (
         <>
-            {matrix}
+            {JSON.stringify(matrix.matrix[matrix.idx])}
         </>
     )
 
 
-})
+}))

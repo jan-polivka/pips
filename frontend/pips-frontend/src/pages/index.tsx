@@ -1,22 +1,35 @@
 import { SimulationDisplay } from '@/components/SimulationDisplay';
 import { getMatch } from '@/logic/fetching';
+import { Matrix } from '@/store/matrix';
 import { Button } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2';
-import { Inter } from 'next/font/google'
-import { createContext, useState } from 'react';
-
-const inter = Inter({ subsets: ['latin'] })
+import { createContext, useEffect, useState } from 'react';
 
 export const MatrixContext = createContext("")
 
 export default function Home() {
 
-  const [matrix, setMatrix] = useState<string>("")
+  const matrix = new Matrix()
+
+  let intervalId: NodeJS.Timer
+
 
   const onClickGetMatch = (async () => {
     getMatch().then((res: any) => {
-      setMatrix(res["message"])
+      matrix.setMatrix(JSON.parse(res["message"]))
     })
+  })
+
+  const onClickStartMatch = (() => {
+    intervalId = setInterval(() => {
+      if (matrix.idx < matrix.matrix.length) {
+        matrix.incrementIdx()
+        console.log(JSON.stringify(matrix.matrix[matrix.idx]))
+      } else {
+        clearInterval(intervalId)
+        matrix.resetIdx()
+      }
+    }, 1000)
   })
 
   return (
@@ -24,15 +37,13 @@ export default function Home() {
       <div>
         <Grid container spacing={2}>
           <Grid xs={12} display={'flex'} justifyContent={'center'} alignContent={'center'}>
-            <MatrixContext.Provider value={matrix}>
-              <SimulationDisplay matrixProp={[1, 2, 3]} />
-            </MatrixContext.Provider>
+            <SimulationDisplay matrix={matrix} />
           </Grid>
           <Grid xs={6} display={'flex'} justifyContent={'center'} alignContent={'center'}>
             <Button variant="contained" onClick={() => onClickGetMatch()}>Get match</Button>
           </Grid >
           <Grid xs={6} display={'flex'} justifyContent={'center'} alignContent={'center'}>
-            <Button variant="contained">Play match</Button>
+            <Button variant="contained" onClick={() => onClickStartMatch()}>Play match</Button>
           </Grid>
         </Grid >
       </div >
