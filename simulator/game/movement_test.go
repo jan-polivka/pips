@@ -2,6 +2,7 @@ package game
 
 import (
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/assert"
 
@@ -81,4 +82,22 @@ func Test_processNewPosition(t *testing.T) {
 
 	assert.Equal(t, expectedBoard.Matrix, result.Matrix)
 	assert.Equal(t, newPosition, board.Pips[0].Position)
+}
+
+func Test_spawnAndMove(t *testing.T) {
+
+	rand := rand.New(rand.NewSource(time.Now().UnixNano()))
+	const cols = 10
+	matrix := [cols]int{}
+	board := types.Board{Matrix: matrix, Cols: cols, Pips: []types.Pip{}, Rand: rand}
+	randFunc := func(int, int) int { return 2 }
+	board = SpawnPip(board, randFunc)
+	randFunc = func(int, int) int { return 1 }
+	newBoard := MovePip(board, 0, randFunc)
+	for i := 0; i < 6; i++ {
+		newBoard = MovePip(newBoard, 0, randFunc)
+	}
+	expectedMatrix := [cols]int{0, 0, 0, 0, 0, 0, 0, 0, 0, 1}
+	assert.Equal(t, expectedMatrix, newBoard.Matrix)
+
 }

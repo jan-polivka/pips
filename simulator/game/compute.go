@@ -11,8 +11,10 @@ import (
 func ComputeMatch(board types.Board) types.Board {
 	head := board
 	head.History = make([][10]int, 0)
+	newBoard := MovePip(board, 0, random.GenerateRandomInt)
+	head.History = append(head.History, newBoard.Matrix)
 	for i := 0; i < 100; i++ {
-		newBoard := MovePip(board, 0, random.GenerateRandomInt)
+		newBoard = MovePip(newBoard, 0, random.GenerateRandomInt)
 		head.History = append(head.History, newBoard.Matrix)
 	}
 	return head
