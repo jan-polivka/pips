@@ -31,9 +31,6 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 	if newPosition < 0 || newPosition >= board.Cols {
 		return false
 	}
-	if board.Matrix[newPosition] != 0 {
-		return false
-	}
 	return true
 }
 
