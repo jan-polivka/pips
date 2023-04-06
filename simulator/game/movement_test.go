@@ -28,8 +28,9 @@ func Test_SpawnTwoPips(t *testing.T) {
 	board := types.Board{Matrix: matrix, Cols: 10, Rand: rand}
 
 	var result = SpawnPip(board, func(int, int) int { return 2 }, 1)
-	result = SpawnPip(board, func(int, int) int { return 8 }, 2)
+	result = SpawnPip(result, func(int, int) int { return 8 }, 2)
 	fmt.Println(result)
+	assert.Equal(t, 1, result.Matrix[2])
 }
 
 func Test_GetNextPosition(t *testing.T) {
