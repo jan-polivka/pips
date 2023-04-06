@@ -7,7 +7,7 @@ import (
 
 func SpawnPip(board types.Board, getRandomInt random.GenerateRandomIntFunction, team int) types.Board {
 	spawningPoint := getRandomInt(0, 5)
-	board.Matrix[spawningPoint] = 1
+	board.Matrix[spawningPoint] = team
 	pip := types.Pip{Position: spawningPoint, Team: team}
 	board.Pips = append(board.Pips, pip)
 	return board
