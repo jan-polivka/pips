@@ -27,8 +27,13 @@ func Test_SpawnTwoPips(t *testing.T) {
 	matrix := [10]int{}
 	board := types.Board{Matrix: matrix, Cols: 10, Rand: rand}
 
-	var result = SpawnPip(board, func(int, int) int { return 2 }, 1)
-	result = SpawnPip(result, func(int, int) int { return 8 }, 2)
+	const posOne = 2
+	const posTwo = 8
+	const teamOne = 1
+	const teamTwo = 2
+
+	var result = SpawnPip(board, func(int, int) int { return posOne }, teamOne)
+	result = SpawnPip(result, func(int, int) int { return posTwo }, teamTwo)
 	fmt.Println(result)
 	assert.Equal(t, 1, result.Matrix[2])
 	assert.Equal(t, 2, result.Matrix[8])
