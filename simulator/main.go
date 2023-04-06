@@ -3,6 +3,7 @@ package main
 import (
 	"math/rand"
 	"pips/game"
+	"pips/random"
 	"pips/types"
 	"time"
 
@@ -33,7 +34,7 @@ func doTheThing() types.Board {
 	const cols = 10
 	matrix := [cols]int{}
 	board := types.Board{Matrix: matrix, Cols: cols, Pips: []types.Pip{}, Rand: rand}
-	// board = game.SpawnPip(board, random.GenerateRandomInt, 1)
+	board = game.SpawnPip(board, random.GenerateRandomInt, 1)
 	board = game.ComputeMatch(board)
 	return board
 }
