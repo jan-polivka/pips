@@ -6,8 +6,7 @@ import (
 )
 
 func SpawnPip(board types.Board, getRandomInt random.GenerateRandomIntFunction, team int) types.Board {
-	const lowerBound = 0
-	const upperBound = 5
+	lowerBound, upperBound := getBounds(team)
 	spawningPoint := getRandomInt(lowerBound, upperBound)
 	board.Matrix[spawningPoint] = team
 	pip := types.Pip{Position: spawningPoint, Team: team}
