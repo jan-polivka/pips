@@ -165,3 +165,33 @@ func Test_GetBoundsTeamTwo(t *testing.T) {
 func Test_GetBoundsPanic(t *testing.T) {
 	assert.Panics(t, func() { getBounds(3) })
 }
+
+func Test_Collision(t *testing.T) {
+
+	rand := rand.New(rand.NewSource(99))
+	matrix := [10]int{}
+	board := types.Board{Matrix: matrix, Cols: 10, Rand: rand}
+
+	const posOne = 2
+	const posTwo = 8
+	const teamOne = 1
+	const teamTwo = 2
+
+	var result = SpawnPip(board, func(int, int) int { return posOne }, teamOne)
+	result = SpawnPip(result, func(int, int) int { return posTwo }, teamTwo)
+	randFunc := func(int, int) int { return 1 }
+	newBoard := MovePip(result, 0, randFunc)
+	var currPip int
+	for i := 0; i < 3; i++ {
+		if i%2 == 0 {
+			currPip = 1
+			randFunc = func(int, int) int { return -1 }
+		} else {
+			currPip = 0
+			randFunc = func(int, int) int { return 1 }
+		}
+		newBoard = MovePip(newBoard, currPip, randFunc)
+	}
+	expectedBoard := [10]int{0, 0, 0, 0, 1, 0, 2, 0, 0, 0}
+	assert.Equal(t, expectedBoard, newBoard.Matrix)
+}
