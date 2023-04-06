@@ -31,6 +31,7 @@ func Test_SpawnTwoPips(t *testing.T) {
 	result = SpawnPip(result, func(int, int) int { return 8 }, 2)
 	fmt.Println(result)
 	assert.Equal(t, 1, result.Matrix[2])
+	assert.Equal(t, 2, result.Matrix[8])
 }
 
 func Test_GetNextPosition(t *testing.T) {
