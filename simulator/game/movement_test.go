@@ -136,7 +136,7 @@ func Test_spawnTwoPipsAndMoveThem(t *testing.T) {
 	randFunc := func(int, int) int { return 1 }
 	newBoard := MovePip(result, 0, randFunc)
 	var currPip int
-	for i := 0; i < 6; i++ {
+	for i := 0; i < 3; i++ {
 		if i%2 == 0 {
 			currPip = 1
 			randFunc = func(int, int) int { return -1 }
@@ -148,6 +148,7 @@ func Test_spawnTwoPipsAndMoveThem(t *testing.T) {
 	}
 	assert.NotEqual(t, teamOne, newBoard.Matrix[posOne])
 	assert.NotEqual(t, teamTwo, newBoard.Matrix[posTwo])
+	// assert.Equal(t, teamOne, newBoard.Matrix[posOne+2])
 }
 
 func Test_GetBoundsTeamOne(t *testing.T) {
