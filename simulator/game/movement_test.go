@@ -131,3 +131,7 @@ func Test_GetBoundsTeamTwo(t *testing.T) {
 	assert.Equal(t, 7, l)
 	assert.Equal(t, 9, u)
 }
+
+func Test_GetBoundsPanic(t *testing.T) {
+	assert.Panics(t, func() { getBounds(3) })
+}
