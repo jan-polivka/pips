@@ -146,6 +146,8 @@ func Test_spawnTwoPipsAndMoveThem(t *testing.T) {
 		}
 		newBoard = MovePip(newBoard, currPip, randFunc)
 	}
+	expectedBoard := [10]int{0, 0, 0, 0, 1, 0, 2, 0, 0, 0}
+	assert.Equal(t, expectedBoard, newBoard.Matrix)
 	assert.NotEqual(t, teamOne, newBoard.Matrix[posOne])
 	assert.NotEqual(t, teamTwo, newBoard.Matrix[posTwo])
 	assert.Equal(t, teamOne, newBoard.Matrix[posOne+2])
