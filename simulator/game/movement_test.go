@@ -29,9 +29,7 @@ func Test_SpawnTwoPips(t *testing.T) {
 
 	var result = SpawnPip(board, func(int, int) int { return 2 }, 1)
 	result = SpawnPip(board, func(int, int) int { return 8 }, 2)
-	expectedIdx := 4
 	fmt.Println(result)
-	fmt.Println(expectedIdx)
 }
 
 func Test_GetNextPosition(t *testing.T) {
