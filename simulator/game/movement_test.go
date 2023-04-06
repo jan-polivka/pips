@@ -133,6 +133,20 @@ func Test_spawnTwoPipsAndMoveThem(t *testing.T) {
 
 	var result = SpawnPip(board, func(int, int) int { return posOne }, teamOne)
 	result = SpawnPip(result, func(int, int) int { return posTwo }, teamTwo)
+	randFunc := func(int, int) int { return 1 }
+	newBoard := MovePip(result, 0, randFunc)
+	var currPip int
+	for i := 0; i < 6; i++ {
+		if i%2 == 0 {
+			currPip = 1
+			randFunc = func(int, int) int { return -1 }
+		} else {
+			currPip = 0
+			randFunc = func(int, int) int { return 1 }
+		}
+		newBoard = MovePip(newBoard, currPip, randFunc)
+	}
+
 }
 
 func Test_GetBoundsTeamOne(t *testing.T) {
