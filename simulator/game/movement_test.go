@@ -1,6 +1,7 @@
 package game
 
 import (
+	"fmt"
 	"testing"
 	"time"
 
@@ -19,6 +20,18 @@ func Test_SpawnPip(t *testing.T) {
 	expectedIdx := 4
 	assert.Equal(t, 1, result.Matrix[expectedIdx])
 	assert.Equal(t, 1, len(result.Pips))
+}
+
+func Test_SpawnTwoPips(t *testing.T) {
+	rand := rand.New(rand.NewSource(99))
+	matrix := [10]int{}
+	board := types.Board{Matrix: matrix, Cols: 10, Rand: rand}
+
+	var result = SpawnPip(board, func(int, int) int { return 2 }, 1)
+	result = SpawnPip(board, func(int, int) int { return 8 }, 2)
+	expectedIdx := 4
+	fmt.Println(result)
+	fmt.Println(expectedIdx)
 }
 
 func Test_GetNextPosition(t *testing.T) {
