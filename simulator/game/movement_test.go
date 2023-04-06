@@ -125,3 +125,9 @@ func Test_GetBoundsTeamOne(t *testing.T) {
 	assert.Equal(t, 0, l)
 	assert.Equal(t, 3, u)
 }
+
+func Test_GetBoundsTeamTwo(t *testing.T) {
+	l, u := getBounds(2)
+	assert.Equal(t, 7, l)
+	assert.Equal(t, 9, u)
+}
