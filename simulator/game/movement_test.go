@@ -148,7 +148,7 @@ func Test_spawnTwoPipsAndMoveThem(t *testing.T) {
 	}
 	assert.NotEqual(t, teamOne, newBoard.Matrix[posOne])
 	assert.NotEqual(t, teamTwo, newBoard.Matrix[posTwo])
-	// assert.Equal(t, teamOne, newBoard.Matrix[posOne+2])
+	assert.Equal(t, teamOne, newBoard.Matrix[posOne+2])
 }
 
 func Test_GetBoundsTeamOne(t *testing.T) {
