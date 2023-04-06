@@ -44,3 +44,13 @@ func processNewPosition(newPosition int, board types.Board, pipIdx int) types.Bo
 	board.Matrix[newPosition] = board.Pips[pipIdx].Team
 	return board
 }
+
+func getBounds(team int) (int, int) {
+	if team == 1 {
+		return 0, 3
+	} else if team == 2 {
+		return 7, 9
+	} else {
+		panic("Wrong team numbering")
+	}
+}

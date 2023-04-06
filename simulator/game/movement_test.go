@@ -119,3 +119,9 @@ func Test_spawnAndMove(t *testing.T) {
 	assert.Equal(t, expectedMatrix, newBoard.Matrix)
 
 }
+
+func Test_GetBoundsTeamOne(t *testing.T) {
+	l, u := getBounds(1)
+	assert.Equal(t, 0, l)
+	assert.Equal(t, 3, u)
+}
