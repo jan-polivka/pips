@@ -122,6 +122,20 @@ func Test_spawnAndMove(t *testing.T) {
 
 func Test_spawnTwoPipsAndMoveThem(t *testing.T) {
 
+	rand := rand.New(rand.NewSource(99))
+	matrix := [10]int{}
+	board := types.Board{Matrix: matrix, Cols: 10, Rand: rand}
+
+	const posOne = 2
+	const posTwo = 8
+	const teamOne = 1
+	const teamTwo = 2
+
+	var result = SpawnPip(board, func(int, int) int { return posOne }, teamOne)
+	result = SpawnPip(result, func(int, int) int { return posTwo }, teamTwo)
+	fmt.Println(result)
+	assert.Equal(t, 1, result.Matrix[2])
+	assert.Equal(t, 2, result.Matrix[8])
 }
 
 func Test_GetBoundsTeamOne(t *testing.T) {
