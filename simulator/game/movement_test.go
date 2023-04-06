@@ -120,6 +120,10 @@ func Test_spawnAndMove(t *testing.T) {
 
 }
 
+func Test_spawnTwoPipsAndMoveThem(t *testing.T) {
+
+}
+
 func Test_GetBoundsTeamOne(t *testing.T) {
 	l, u := getBounds(1)
 	assert.Equal(t, 0, l)
