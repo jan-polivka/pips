@@ -1,6 +1,7 @@
 package game
 
 import (
+	"fmt"
 	"math/rand"
 	"pips/types"
 	"testing"
@@ -64,6 +65,7 @@ func (suite *TestSuite) Test_eatPipIfThreatenedFalse() {
 func (suite *TestSuite) Test_eatPipIfThreatenedSelfFail() {
 	result := eatPipIfThreatened(suite.board, suite.posOne, 0)
 	expected := suite.board.Pips[0]
+	fmt.Println(suite.board.Pips)
 	suite.Equal(expected, result.Pips[0])
 }
 
