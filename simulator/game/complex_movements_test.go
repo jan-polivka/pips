@@ -51,7 +51,7 @@ func movePipInTest(testSuite *TestSuite, newBoard types.Board, currPip int) type
 	return MovePip(newBoard, currPip, testSuite.randFunc[currPip])
 }
 
-func teleportPipToPosition(suite *TestSuite, board types.Board, currPip int, newPosition int) types.Board {
+func teleportPipToPosition(board types.Board, currPip int, newPosition int) types.Board {
 	board.Matrix[board.Pips[currPip].Position] = 0
 	board.Pips[currPip].Position = newPosition
 	board.Matrix[newPosition] = board.Pips[currPip].Team
