@@ -67,7 +67,7 @@ func eatPipIfThreatened(board types.Board, position int, pipIdx int) types.Board
 	fmt.Println(board.Matrix)
 	fmt.Println(position)
 	fmt.Println(board.Pips)
-	if board.Matrix[position] == 0 {
+	if board.Matrix[position] == 0 || board.Pips[pipIdx].Position == position {
 		return board
 	}
 	for i := 0; i < len(board.Pips); i++ {
