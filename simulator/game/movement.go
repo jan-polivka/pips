@@ -36,9 +36,7 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 
 func ProcessNewPosition(newPosition int, board types.Board, pipIdx int) types.Board {
 	newBoard := board
-	if isAPipThreatened(newBoard, newPosition) {
-		eatPip(newBoard, newPosition)
-	}
+	eatPip(newBoard, newPosition)
 	return changePositionOfAPip(newPosition, newBoard, pipIdx)
 }
 
@@ -67,6 +65,9 @@ func isAPipThreatened(board types.Board, position int) bool {
 }
 
 func eatPip(board types.Board, position int) types.Board {
+	if !isAPipThreatened(board, position) {
+		return board
+	}
 	for i := 0; i < len(board.Pips); i++ {
 		if board.Pips[i].Position == position {
 			board.Pips[i].Position = -1
