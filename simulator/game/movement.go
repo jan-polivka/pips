@@ -1,6 +1,7 @@
 package game
 
 import (
+	"fmt"
 	"pips/random"
 	"pips/types"
 )
@@ -40,6 +41,7 @@ func ProcessNewPosition(newPosition int, board types.Board, pipIdx int) types.Bo
 }
 
 func changePositionOfAPip(newPosition int, board types.Board, pipIdx int) types.Board {
+	fmt.Println(board.Pips[pipIdx])
 	board.Matrix[board.Pips[pipIdx].Position] = 0
 	board.Pips[pipIdx].Position = newPosition
 	board.Matrix[newPosition] = board.Pips[pipIdx].Team
