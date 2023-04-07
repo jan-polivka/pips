@@ -75,5 +75,7 @@ func eatPipIfThreatened(board types.Board, position int, pipIdx int) types.Board
 			board.Pips[i].Position = -1
 		}
 	}
+	fmt.Println(board.Matrix)
+	fmt.Println(board.Pips)
 	return board
 }
