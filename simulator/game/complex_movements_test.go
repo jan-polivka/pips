@@ -39,7 +39,7 @@ func (suite *TestSuite) Test_moveTwoPips() {
 }
 
 func (suite *TestSuite) Test_pipOneEatsPipTwo() {
-	newBoard := movePipInTest(suite, suite.board, 0)
+	newBoard := ProcessNewPosition(7, suite.board, 0)
 	newBoard = movePipInTest(suite, newBoard, 0)
 }
 
