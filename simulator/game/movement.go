@@ -39,6 +39,10 @@ func ProcessNewPosition(newPosition int, board types.Board, pipIdx int) types.Bo
 	if isAPipThreatened(board, newPosition) {
 		// update the eaten pip
 	}
+	return changePositionOfAPip(newPosition, board, pipIdx)
+}
+
+func changePositionOfAPip(newPosition int, board types.Board, pipIdx int) types.Board {
 	board.Matrix[board.Pips[pipIdx].Position] = 0
 	board.Pips[pipIdx].Position = newPosition
 	board.Matrix[newPosition] = board.Pips[pipIdx].Team
