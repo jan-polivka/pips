@@ -36,7 +36,9 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 
 func ProcessNewPosition(newPosition int, board types.Board, pipIdx int) types.Board {
 	//is a pip being eaten?
-	// update the eaten pip
+	if isAPipThreatened(board, newPosition) {
+		// update the eaten pip
+	}
 	board.Matrix[board.Pips[pipIdx].Position] = 0
 	board.Pips[pipIdx].Position = newPosition
 	board.Matrix[newPosition] = board.Pips[pipIdx].Team
