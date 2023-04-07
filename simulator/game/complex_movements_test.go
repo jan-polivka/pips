@@ -63,8 +63,8 @@ func (suite *TestSuite) Test_eatPipIfThreatenedFalse() {
 }
 
 func (suite *TestSuite) Test_eatPipIfThreatenedSelfFail() {
-	result := eatPipIfThreatened(suite.board, suite.posOne, 0)
 	expected := suite.board.Pips[0]
+	result := eatPipIfThreatened(suite.board, suite.posOne, 0)
 	fmt.Println(suite.board.Pips)
 	suite.Equal(expected, result.Pips[0])
 }
