@@ -81,7 +81,7 @@ func Test_processNewPosition(t *testing.T) {
 	pip := types.Pip{Position: 2, Team: 1}
 	pipArray := []types.Pip{pip}
 	board := types.Board{Matrix: matrix, Cols: cols, Pips: pipArray, Rand: rand}
-	result := processNewPosition(newPosition, board, 0)
+	result := ProcessNewPosition(newPosition, board, 0)
 
 	expectedMatrix := [cols]int{}
 	expectedMatrix[newPosition] = 1
