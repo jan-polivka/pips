@@ -26,14 +26,14 @@ func (suite *TestSuite) SetupTest() {
 	suite.posTwo = 8
 	suite.teamOne = 1
 	suite.teamTwo = 2
+	suite.board = SpawnPip(suite.board, func(int, int) int { return suite.posOne }, suite.teamOne)
+	suite.board = SpawnPip(suite.board, func(int, int) int { return suite.posTwo }, suite.teamTwo)
 	suite.randFunc = []func(int, int) int{func(int, int) int { return 1 }, func(i1, i2 int) int { return -1 }}
 }
 
 func (suite *TestSuite) Test_moveTwoPips() {
-	var result = SpawnPip(suite.board, func(int, int) int { return suite.posOne }, suite.teamOne)
-	result = SpawnPip(result, func(int, int) int { return suite.posTwo }, suite.teamTwo)
 	randFunc := func(int, int) int { return 1 }
-	newBoard := MovePip(result, 0, randFunc)
+	newBoard := MovePip(suite.board, 0, randFunc)
 	var currPip int
 	for i := 0; i < 3; i++ {
 		if i%2 == 0 {
