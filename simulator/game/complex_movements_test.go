@@ -29,7 +29,7 @@ func (suite *TestSuite) SetupTest() {
 	suite.randFunc = []func(int, int) int{func(int, int) int { return 1 }, func(i1, i2 int) int { return -1 }}
 }
 
-func (suite *TestSuite) Test_spawnTwoPipsAndMoveThem() {
+func (suite *TestSuite) Test_moveTwoPips() {
 	var result = SpawnPip(suite.board, func(int, int) int { return suite.posOne }, suite.teamOne)
 	result = SpawnPip(result, func(int, int) int { return suite.posTwo }, suite.teamTwo)
 	randFunc := func(int, int) int { return 1 }
