@@ -35,7 +35,6 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 }
 
 func ProcessNewPosition(newPosition int, board types.Board, pipIdx int) types.Board {
-	//is a pip being eaten?
 	if isAPipThreatened(board, newPosition) {
 		// update the eaten pip
 	}
