@@ -21,6 +21,7 @@ func ComputeMatch(board types.Board) types.Board {
 			idx = 1
 		}
 		if newBoard.Pips[idx].Position != -1 {
+			fmt.Println(newBoard.Pips[idx])
 			newBoard = MovePip(newBoard, idx, random.GenerateRandomInt)
 			head.History = append(head.History, newBoard.Matrix)
 		} else {
