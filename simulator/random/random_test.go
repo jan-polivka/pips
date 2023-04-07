@@ -1,7 +1,6 @@
 package random
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -17,7 +16,6 @@ func Test_GenerateRandomInt(t *testing.T) {
 		randMap[result] = 1
 	}
 
-	fmt.Println(randMap)
 	for i := min; i < max; i++ {
 		assert.NotEqual(t, 0, randMap[i])
 	}
