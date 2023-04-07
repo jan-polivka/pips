@@ -68,6 +68,9 @@ func getBounds(team int) (int, int) {
 }
 
 func eatPipIfThreatened(board types.Board, position int) types.Board {
+	fmt.Println(board.Matrix)
+	fmt.Println(position)
+	fmt.Println(board.Pips)
 	if board.Matrix[position] == 0 {
 		return board
 	}
