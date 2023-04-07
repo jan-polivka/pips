@@ -1,7 +1,6 @@
 package game
 
 import (
-	"fmt"
 	"testing"
 	"time"
 
@@ -33,7 +32,6 @@ func Test_SpawnTwoPips(t *testing.T) {
 
 	var result = SpawnPip(board, func(int, int) int { return posOne }, teamOne)
 	result = SpawnPip(result, func(int, int) int { return posTwo }, teamTwo)
-	fmt.Println(result)
 	assert.Equal(t, 1, result.Matrix[2])
 	assert.Equal(t, 2, result.Matrix[8])
 }
