@@ -65,6 +65,11 @@ func isAPipThreatened(board types.Board, position int) bool {
 	return false
 }
 
-func eatPip() {
-
+func eatPip(board types.Board, position int) types.Board {
+	for i := 0; i < len(board.Pips); i++ {
+		if board.Pips[i].Position == position {
+			board.Pips[i].Position = -1
+		}
+	}
+	return board
 }
