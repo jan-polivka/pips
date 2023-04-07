@@ -35,6 +35,7 @@ func doTheThing() types.Board {
 	matrix := [cols]int{}
 	board := types.Board{Matrix: matrix, Cols: cols, Pips: []types.Pip{}, Rand: rand}
 	board = game.SpawnPip(board, random.GenerateRandomInt, 1)
+	board = game.SpawnPip(board, random.GenerateRandomInt, 2)
 	board = game.ComputeMatch(board)
 	return board
 }
