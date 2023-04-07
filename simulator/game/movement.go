@@ -38,7 +38,7 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 
 func ProcessNewPosition(newPosition int, board types.Board, pipIdx int) types.Board {
 	fmt.Println(board.Pips)
-	newBoard := eatPipIfThreatened(board, newPosition)
+	newBoard := eatPipIfThreatened(board, newPosition, pipIdx)
 	fmt.Println("pips")
 	fmt.Println(newBoard.Pips)
 	return changePositionOfAPip(newPosition, newBoard, pipIdx)
@@ -63,7 +63,7 @@ func getBounds(team int) (int, int) {
 	}
 }
 
-func eatPipIfThreatened(board types.Board, position int) types.Board {
+func eatPipIfThreatened(board types.Board, position int, pipIdx int) types.Board {
 	fmt.Println(board.Matrix)
 	fmt.Println(position)
 	fmt.Println(board.Pips)
