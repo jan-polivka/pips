@@ -64,3 +64,7 @@ func isAPipThreatened(board types.Board, position int) bool {
 	}
 	return false
 }
+
+func eatPip() {
+
+}
