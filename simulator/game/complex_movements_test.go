@@ -55,7 +55,7 @@ func (suite *TestSuite) Test_isAPipThreatenedTrue() {
 	suite.Equal(true, result)
 }
 
-func (suite *TestSuite) Test_eatPip() {
+func (suite *TestSuite) Test_eatPipIfThreatenedTrue() {
 	result := eatPipIfThreatened(suite.board, suite.posOne)
 	expected := suite.board.Pips[0]
 	expected.Position = -1
