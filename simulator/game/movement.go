@@ -1,7 +1,6 @@
 package game
 
 import (
-	"fmt"
 	"pips/random"
 	"pips/types"
 )
@@ -17,8 +16,6 @@ func SpawnPip(board types.Board, getRandomInt random.GenerateRandomIntFunction, 
 
 func MovePip(board types.Board, pipIdx int, getRandomInt random.GenerateRandomIntFunction) types.Board {
 	newPosition := getNextPosition(board.Pips[pipIdx], getRandomInt)
-	fmt.Println("new position")
-	fmt.Println(newPosition)
 	if isNewPositionValid(newPosition, board) {
 		return ProcessNewPosition(newPosition, board, pipIdx)
 	}
@@ -37,16 +34,11 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 }
 
 func ProcessNewPosition(newPosition int, board types.Board, pipIdx int) types.Board {
-	fmt.Println(board.Pips)
 	newBoard := eatPipIfThreatened(board, newPosition, pipIdx)
-	fmt.Println("pips")
-	fmt.Println(newBoard.Pips)
 	return changePositionOfAPip(newPosition, newBoard, pipIdx)
 }
 
 func changePositionOfAPip(newPosition int, board types.Board, pipIdx int) types.Board {
-	fmt.Println(pipIdx)
-	fmt.Println(board.Pips[pipIdx])
 	board.Matrix[board.Pips[pipIdx].Position] = 0
 	board.Pips[pipIdx].Position = newPosition
 	board.Matrix[newPosition] = board.Pips[pipIdx].Team
@@ -64,9 +56,6 @@ func getBounds(team int) (int, int) {
 }
 
 func eatPipIfThreatened(board types.Board, position int, pipIdx int) types.Board {
-	fmt.Println(board.Matrix)
-	fmt.Println(position)
-	fmt.Println(board.Pips)
 	if board.Matrix[position] == 0 || board.Pips[pipIdx].Position == position {
 		return board
 	}
@@ -75,7 +64,5 @@ func eatPipIfThreatened(board types.Board, position int, pipIdx int) types.Board
 			board.Pips[i].Position = -1
 		}
 	}
-	fmt.Println(board.Matrix)
-	fmt.Println(board.Pips)
 	return board
 }
