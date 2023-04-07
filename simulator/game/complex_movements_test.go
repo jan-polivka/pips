@@ -62,6 +62,12 @@ func (suite *TestSuite) Test_eatPipIfThreatenedTrue() {
 	suite.Equal(expected, result.Pips[0])
 }
 
+func (suite *TestSuite) Test_eatPipIfThreatenedFalse() {
+	result := eatPipIfThreatened(suite.board, suite.posTwo)
+	expected := suite.board.Pips[0]
+	suite.Equal(expected, result.Pips[0])
+}
+
 func Test_thisSuite(t *testing.T) {
 	suite.Run(t, new(TestSuite))
 }
