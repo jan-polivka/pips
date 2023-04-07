@@ -45,6 +45,7 @@ func (suite *TestSuite) Test_pipOneEatsPipTwo() {
 	expectedBoardPip := suite.board.Pips[1]
 	expectedBoardPip.Position = -1
 	suite.Equal(expectedBoard, newBoard.Matrix)
+	suite.Equal(expectedBoardPip, newBoard.Pips[1])
 }
 
 func (suite *TestSuite) Test_eatPipIfThreatenedTrue() {
