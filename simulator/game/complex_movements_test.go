@@ -10,11 +10,12 @@ import (
 
 type TestSuite struct {
 	suite.Suite
-	board   types.Board
-	posOne  int
-	posTwo  int
-	teamOne int
-	teamTwo int
+	board    types.Board
+	posOne   int
+	posTwo   int
+	teamOne  int
+	teamTwo  int
+	randFunc []func(int, int) int
 }
 
 func (suite *TestSuite) SetupTest() {
@@ -25,9 +26,10 @@ func (suite *TestSuite) SetupTest() {
 	suite.posTwo = 8
 	suite.teamOne = 1
 	suite.teamTwo = 2
+	suite.randFunc = []func(int, int) int{func(int, int) int { return 1 }, func(i1, i2 int) int { return -1 }}
 }
 
-func (suite *TestSuite) TestExample() {
+func (suite *TestSuite) Test_spawnTwoPipsAndMoveThem() {
 	var result = SpawnPip(suite.board, func(int, int) int { return suite.posOne }, suite.teamOne)
 	result = SpawnPip(result, func(int, int) int { return suite.posTwo }, suite.teamTwo)
 	randFunc := func(int, int) int { return 1 }
@@ -45,9 +47,12 @@ func (suite *TestSuite) TestExample() {
 	}
 	expectedBoard := [10]int{0, 0, 0, 0, 1, 0, 2, 0, 0, 0}
 	suite.Equal(expectedBoard, newBoard.Matrix)
-
 }
 
 func Test_thisSuite(t *testing.T) {
 	suite.Run(t, new(TestSuite))
+}
+
+func movePipInTest(testSuite TestSuite, newBoard types.Board, currPip int, randFunc func(int, int) int) types.Board {
+	return MovePip(newBoard, currPip, testSuite.randFunc[currPip])
 }
