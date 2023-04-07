@@ -26,8 +26,7 @@ func MovePip(board types.Board, pipIdx int, getRandomInt random.GenerateRandomIn
 }
 
 func getNextPosition(pip types.Pip, getRandomInt random.GenerateRandomIntFunction) int {
-	newDirection := getRandomInt(-1, 1)
-	return pip.Position + newDirection
+	return pip.Position + getRandomInt(-1, 1)
 }
 
 func isNewPositionValid(newPosition int, board types.Board) bool {
