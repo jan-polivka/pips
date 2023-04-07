@@ -45,6 +45,10 @@ func (suite *TestSuite) Test_pipOneEatsPipTwo() {
 	suite.Equal(expectedBoard, newBoard.Matrix)
 }
 
+func Test_isAPipThreatenedFalse(t *testing.T) {
+
+}
+
 func Test_thisSuite(t *testing.T) {
 	suite.Run(t, new(TestSuite))
 }
