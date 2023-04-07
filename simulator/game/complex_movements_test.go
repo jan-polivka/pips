@@ -42,6 +42,8 @@ func (suite *TestSuite) Test_pipOneEatsPipTwo() {
 	newBoard := ProcessNewPosition(suite.posTwo-1, suite.board, 0)
 	newBoard = movePipInTest(suite, newBoard, 0)
 	expectedBoard := [10]int{0, 0, 0, 0, 0, 0, 0, 0, 1, 0}
+	expectedBoardPip := suite.board.Pips[1]
+	expectedBoardPip.Position = -1
 	suite.Equal(expectedBoard, newBoard.Matrix)
 }
 
