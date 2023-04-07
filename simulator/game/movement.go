@@ -53,6 +53,6 @@ func getBounds(team int) (int, int) {
 	}
 }
 
-func IsAPipThreatened(board types.Board, position int) bool {
+func isAPipThreatened(board types.Board, position int) bool {
 	return false
 }
