@@ -33,7 +33,7 @@ func (suite *TestSuite) SetupTest() {
 
 func (suite *TestSuite) Test_moveTwoPips() {
 	randFunc := func(int, int) int { return 1 }
-	// newBoard := MovePip(suite.board, 0, randFunc)
+	newBoard := MovePip(suite.board, 0, randFunc)
 	// var currPip int
 	// for i := 0; i < 3; i++ {
 	// 	if i%2 == 0 {
@@ -45,7 +45,7 @@ func (suite *TestSuite) Test_moveTwoPips() {
 	// 	}
 	// 	newBoard = MovePip(newBoard, currPip, randFunc)
 	// }
-	expectedBoard := [10]int{0, 0, 1, 0, 0, 0, 0, 0, 2, 0}
+	expectedBoard := [10]int{0, 0, 0, 1, 0, 0, 0, 0, 2, 0}
 	suite.Equal(expectedBoard, newBoard.Matrix)
 }
 
