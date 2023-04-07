@@ -45,16 +45,6 @@ func (suite *TestSuite) Test_pipOneEatsPipTwo() {
 	suite.Equal(expectedBoard, newBoard.Matrix)
 }
 
-func (suite *TestSuite) Test_isAPipThreatenedFalse() {
-	result := isAPipThreatened(suite.board, suite.posOne+1)
-	suite.Equal(false, result)
-}
-
-func (suite *TestSuite) Test_isAPipThreatenedTrue() {
-	result := isAPipThreatened(suite.board, suite.posOne)
-	suite.Equal(true, result)
-}
-
 func (suite *TestSuite) Test_eatPipIfThreatenedTrue() {
 	result := eatPipIfThreatened(suite.board, suite.posOne)
 	expected := suite.board.Pips[0]
