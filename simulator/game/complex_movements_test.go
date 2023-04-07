@@ -63,6 +63,7 @@ func (suite *TestSuite) Test_eatPip() {
 	fmt.Println(result.Pips[0])
 	fmt.Println(expected)
 	fmt.Println(result.Pips[0] == expected)
+	suite.Equal(expected, result.Pips[0])
 }
 
 func Test_thisSuite(t *testing.T) {
