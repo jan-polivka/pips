@@ -41,6 +41,7 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 }
 
 func ProcessNewPosition(newPosition int, board types.Board, pipIdx int) types.Board {
+	fmt.Println(board.Pips)
 	newBoard := eatPipIfThreatened(board, newPosition)
 	fmt.Println("pips")
 	fmt.Println(newBoard.Pips)
