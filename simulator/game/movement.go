@@ -17,7 +17,7 @@ func SpawnPip(board types.Board, getRandomInt random.GenerateRandomIntFunction, 
 func MovePip(board types.Board, pipIdx int, getRandomInt random.GenerateRandomIntFunction) types.Board {
 	newPosition := getNextPosition(board.Pips[pipIdx], getRandomInt)
 	if isNewPositionValid(newPosition, board) {
-		return processNewPosition(newPosition, board, pipIdx)
+		return ProcessNewPosition(newPosition, board, pipIdx)
 	}
 	return board
 }
@@ -34,7 +34,7 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 	return true
 }
 
-func processNewPosition(newPosition int, board types.Board, pipIdx int) types.Board {
+func ProcessNewPosition(newPosition int, board types.Board, pipIdx int) types.Board {
 	board.Matrix[board.Pips[pipIdx].Position] = 0
 	board.Pips[pipIdx].Position = newPosition
 	board.Matrix[newPosition] = board.Pips[pipIdx].Team
