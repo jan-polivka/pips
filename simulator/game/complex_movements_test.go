@@ -46,12 +46,12 @@ func (suite *TestSuite) Test_pipOneEatsPipTwo() {
 }
 
 func (suite *TestSuite) Test_isAPipThreatenedFalse() {
-	result := isAPipThreatened(suite.board, suite.teamOne+1)
+	result := isAPipThreatened(suite.board, suite.posOne+1)
 	suite.Equal(false, result)
 }
 
 func (suite *TestSuite) Test_isAPipThreatenedTrue() {
-	result := isAPipThreatened(suite.board, suite.teamOne)
+	result := isAPipThreatened(suite.board, suite.posOne)
 	suite.Equal(true, result)
 }
 
