@@ -41,6 +41,7 @@ func ProcessNewPosition(newPosition int, board types.Board, pipIdx int) types.Bo
 }
 
 func changePositionOfAPip(newPosition int, board types.Board, pipIdx int) types.Board {
+	fmt.Println(pipIdx)
 	fmt.Println(board.Pips[pipIdx])
 	board.Matrix[board.Pips[pipIdx].Position] = 0
 	board.Pips[pipIdx].Position = newPosition
