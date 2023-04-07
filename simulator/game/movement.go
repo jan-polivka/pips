@@ -52,3 +52,7 @@ func getBounds(team int) (int, int) {
 		panic("Wrong team numbering")
 	}
 }
+
+func IsAPipThreatened(board types.Board, position int) bool {
+	return false
+}
