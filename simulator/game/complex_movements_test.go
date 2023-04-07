@@ -33,7 +33,7 @@ func (suite *TestSuite) SetupTest() {
 
 func (suite *TestSuite) Test_moveTwoPips() {
 	newBoard := movePipInTest(suite, suite.board, 0)
-	newBoard = movePipInTest(suite, suite.board, 1)
+	newBoard = movePipInTest(suite, newBoard, 1)
 	// randFunc := func(int, int) int { return 1 }
 	// newBoard := MovePip(suite.board, 0, randFunc)
 	// var currPip int
