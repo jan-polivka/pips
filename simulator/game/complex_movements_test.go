@@ -49,14 +49,14 @@ func (suite *TestSuite) Test_pipOneEatsPipTwo() {
 }
 
 func (suite *TestSuite) Test_eatPipIfThreatenedTrue() {
-	result := eatPipIfThreatened(suite.board, suite.posOne)
+	result := eatPipIfThreatened(suite.board, suite.posOne, 0)
 	expected := suite.board.Pips[0]
 	expected.Position = -1
 	suite.Equal(expected, result.Pips[0])
 }
 
 func (suite *TestSuite) Test_eatPipIfThreatenedFalse() {
-	result := eatPipIfThreatened(suite.board, suite.posTwo)
+	result := eatPipIfThreatened(suite.board, suite.posTwo, 0)
 	expected := suite.board.Pips[0]
 	suite.Equal(expected, result.Pips[0])
 }
