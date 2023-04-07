@@ -15,7 +15,6 @@ func Test_SpawnPip(t *testing.T) {
 	rand := rand.New(rand.NewSource(99))
 	matrix := [10]int{}
 	board := types.Board{Matrix: matrix, Cols: 10, Rand: rand}
-
 	var result = SpawnPip(board, func(int, int) int { return 4 }, 1)
 	expectedIdx := 4
 	assert.Equal(t, 1, result.Matrix[expectedIdx])
