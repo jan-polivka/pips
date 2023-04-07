@@ -50,6 +50,11 @@ func (suite *TestSuite) Test_isAPipThreatenedFalse() {
 	suite.Equal(false, result)
 }
 
+func (suite *TestSuite) Test_isAPipThreatenedTrue() {
+	result := isAPipThreatened(suite.board, suite.teamOne+1)
+	suite.Equal(false, result)
+}
+
 func Test_thisSuite(t *testing.T) {
 	suite.Run(t, new(TestSuite))
 }
