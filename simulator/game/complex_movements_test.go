@@ -1,6 +1,8 @@
 package game
 
 import (
+	"math/rand"
+	"pips/types"
 	"testing"
 
 	"github.com/stretchr/testify/suite"
@@ -8,15 +10,16 @@ import (
 
 type TestSuite struct {
 	suite.Suite
-	myVariable int
+	board types.Board
 }
 
 func (suite *TestSuite) SetupTest() {
-	suite.myVariable = 5
+	rand := rand.New(rand.NewSource(99))
+	matrix := [10]int{}
+	suite.board = types.Board{Matrix: matrix, Cols: 10, Rand: rand}
 }
 
 func (suite *TestSuite) TestExample() {
-	suite.Equal(5, suite.myVariable)
 }
 
 func Test_thisSuite(t *testing.T) {
