@@ -17,6 +17,7 @@ func SpawnPip(board types.Board, getRandomInt random.GenerateRandomIntFunction, 
 
 func MovePip(board types.Board, pipIdx int, getRandomInt random.GenerateRandomIntFunction) types.Board {
 	newPosition := getNextPosition(board.Pips[pipIdx], getRandomInt)
+	fmt.Println("pip")
 	fmt.Println(pipIdx)
 	fmt.Println("new position")
 	fmt.Println(newPosition)
