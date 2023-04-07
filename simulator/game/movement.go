@@ -1,6 +1,7 @@
 package game
 
 import (
+	"fmt"
 	"pips/random"
 	"pips/types"
 )
@@ -8,6 +9,7 @@ import (
 func SpawnPip(board types.Board, getRandomInt random.GenerateRandomIntFunction, team int) types.Board {
 	lowerBound, upperBound := getBounds(team)
 	spawningPoint := getRandomInt(lowerBound, upperBound)
+	fmt.Println(spawningPoint)
 	board.Matrix[spawningPoint] = team
 	pip := types.Pip{Position: spawningPoint, Team: team}
 	board.Pips = append(board.Pips, pip)
