@@ -60,7 +60,7 @@ func (suite *TestSuite) Test_eatPip() {
 	result := eatPip(suite.board, suite.posOne)
 	expected := suite.board.Pips[0]
 	expected.Position = -1
-	fmt.Println(result)
+	fmt.Println(result.Pips[0] == expected)
 }
 
 func Test_thisSuite(t *testing.T) {
