@@ -35,8 +35,7 @@ func isNewPositionValid(newPosition int, board types.Board) bool {
 }
 
 func ProcessNewPosition(newPosition int, board types.Board, pipIdx int) types.Board {
-	newBoard := board
-	eatPip(newBoard, newPosition)
+	newBoard := eatPip(board, newPosition)
 	return changePositionOfAPip(newPosition, newBoard, pipIdx)
 }
 
